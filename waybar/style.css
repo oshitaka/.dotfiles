@@ -1,0 +1,177 @@
+@import '../../.config/waybar/catppuccin_theme/mocha.css';
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: BigBlueTermPlus Nerd Font, Symbols Nerd Font Mono;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 1px;
+}
+
+window#waybar.top {
+    background: alpha(@base, 0.94);
+}
+
+window#waybar.bottom {
+    background: alpha(@base, 0.94);
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
+}
+
+#workspaces button {
+  border-color: transparent;
+	color: @yellow;	
+	padding: 0 4px;
+  padding: 0px 4px;
+	border-bottom: solid 2px transparent;
+  border-radius: 0;
+}
+
+#workspaces button:hover {
+    background: inherit;
+    background-color: transparent;
+    padding: 0px 4px;
+	  border-bottom: solid 2px;
+	  border-radius: 0;
+
+}
+
+#workspaces button.active {
+	color: @green;
+	padding: 0px 4px;
+	border-bottom: solid 2px;
+	border-radius: 0;
+}
+
+#workspaces button.empty {
+	color: @crust;
+	padding: 0 2px;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+}
+
+#custom-weather,
+#custom-ip,
+#language,
+#bluetooth,
+#clock,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#window,
+#custom-cmus,
+#custom-cava,
+#network#speed,
+#battery.plugged,
+#battery.charging{
+    padding: 0px 4px 0px 3px;
+    margin: 0px 3px 0px 3px;
+    color: @green;
+}
+
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature{
+    color: @green;
+    margin: 0px 6px 0px 6px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+  color: #a6d189;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#wireplumber.muted {
+    background-color: transparent;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    border-bottom: solid 2px;
+	  border-radius: 0;
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+
+#temperature.critical {
+    background-color: @red;
+    border-bottom: solid 2px;
+	  border-radius: 0;
+}
+
+#network.disconnected {
+    color: @red;
+}
+
+#custom-cava {
+  color: @green;
+  border-left: 0px;
+  border-right: 0px;
+  padding-bottom: 6px;
+  font-size: 24px;
+  font-family: "bargraph";
+}
+
+#custom-media {
+    color: @mauve;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    color: @mauve;
+}
+
+#custom-media.custom-vlc {
+    color: @mauve;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#idle_inhibitor{
+  padding: 0px 15px 0px 0px;
+  margin: 0px 3px 0px 3px;
+}
+
+
