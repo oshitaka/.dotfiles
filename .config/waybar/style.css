@@ -1,0 +1,230 @@
+/* 
+THIS IS DARK GRUVBOX THEME 
+*/
+
+@import '../../.config/waybar/themes/htb.css';
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: BigBlueTermPlus Nerd Font, Symbols Nerd Font Mono;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 1px;
+}
+
+window#waybar.top {
+  background: alpha(@bg, 0.80);
+  /* background: alpha(@bg, 1.0); */
+  color: @gray;
+}
+
+window#waybar.bottom {
+  background: alpha(@bg, 0.80);
+  /* background: alpha(@bg, 1.0); */
+  color: @gray;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
+}
+
+#workspaces button {
+  border-color: transparent;
+  color: @button;
+	padding: 0 4px;
+  padding: 0px 4px;
+	border-bottom: solid 2px transparent;
+  border-radius: 0;
+}
+
+#workspaces button:hover {
+    background: inherit;
+    background-color: transparent;
+    padding: 0px 4px;
+	  border-bottom: solid 2px;
+	  border-radius: 0;
+
+}
+
+#workspaces button.active {
+	color: @button_active;	
+	padding: 0px 4px;
+	border-bottom: solid 2px;
+	border-radius: 0;
+}
+
+#workspaces button.empty {
+  color: @button;
+	padding: 0 2px;
+}
+
+#workspaces button.urgent {
+    background-color: @neutral_red;
+}
+
+#custom-weather{
+    padding: 0px 4px 0px 3px;
+    margin: 0px 3px 0px 3px;
+    color: @module;
+}
+
+#language,
+#bluetooth,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber{
+    padding: 0px 4px 0px 3px;
+    margin: 0px 3px 0px 3px;
+    color: @module;
+}
+
+#clock{
+    padding: 0px 4px 0px 3px;
+    margin: 0px 3px 0px 3px;
+    color: @module;
+}
+
+#idle_inhibitor{
+  padding: 0px 10px 0px 0px;
+  margin: 0px 3px 0px 3px;
+  color: @module;
+}
+
+
+#tray,
+#mode,
+#window{
+    padding: 0px 4px 0px 3px;
+    margin: 0px 3px 0px 3px;
+    color: @module;
+}
+
+#network#speed{
+  padding: 0px 1px 0px 3px;
+  margin: 0px 1px 0px 3px;
+  color: @module;
+}
+
+#custom-cmus{
+    padding: 0px 4px 0px 3px;
+    margin: 0px 3px 0px 3px;
+    color: @module;
+}
+
+#custom-ip{
+    padding: 0px 4px 0px 3px;
+    margin: 0px 3px 0px 3px;
+    color: @module;
+}
+
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#battery.plugged,
+#battery.charging{
+    min-width: 35px;
+    color: @module;
+    margin: 0px 6px 0px 6px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+  color: #a6d189;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#wireplumber.muted {
+    background-color: transparent;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    border-bottom: solid 2px;
+	  border-radius: 0;
+    color: @neutral_red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#custom-vpn {
+  padding: 0px 6px 0px 1px;
+  margin: 0px 3px 0px 1px;
+
+}
+
+.ip-match {
+  color:@neutral_green; /* Color when IP matches */
+}
+
+.ip-mismatch {
+  color:@neutral_red; /* Color when IP does not match */
+}
+
+.ip-noip {
+  /*color:@light2;*/ /* Color when IP does not match */
+  color: @module;
+}
+
+#custom-cava{
+  padding: 0px 4px 0px 3px;
+  margin: 0px 3px 0px 3px;
+  color: @neutral_blue;
+}
+
+#temperature.critical {
+    background-color: @neutral_red ;
+    border-bottom: solid 2px;
+	  border-radius: 0;
+}
+
+#network.disconnected {
+    color: @neutral_red ;
+}
+
+#custom-media {
+    color: @module;
+    min-width: 100px;
+    padding: 0px 6px 0px 6px;
+    margin: 0px 3px 0px 3px;
+}
+
+.timer{
+    color: @module;
+    padding: 0px 6px 0px 6px;
+    margin: 0px 3px 0px 3px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+
+

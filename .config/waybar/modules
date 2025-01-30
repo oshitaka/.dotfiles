@@ -1,0 +1,276 @@
+{
+    //WORKSPACES
+    "hyprland/workspaces": {
+	      "active-only":false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "show-special": false,
+        "persistent-workspaces":{
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": []
+        },
+        "format-icons": {
+            "active": "󰮯",
+            "default": "󰊠",
+            "persistent":"󰊠",
+            "empty": ""
+        }
+    },
+
+    "custom/separator": {
+        "format": "",
+        "interval": "once",
+        "tooltip": false
+    },
+
+    "group/indicators": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory",
+            "temperature",
+            "disk",
+            "battery",
+            "power-profiles-daemon"
+        ]
+    },
+
+    "group/main": {
+        "orientation": "horizontal",
+        "modules": [
+            "bluetooth",
+            "network",
+            "backlight",
+            "wireplumber"
+        ]
+    },
+
+     
+    //indicators
+    "cpu": {
+        "interval": 1,
+        "format": " {usage}%"
+    },
+    "disk": {
+        "interval": 30,
+        "path": "/",
+        "format": " {percentage_used}%",
+        "tooltip": true,
+        "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)"
+    },
+    "temperature": {
+        "interval": 10,
+        "tooltip": false,
+        "thermal-zone": 2,
+        "hwmon-path": [
+            "/sys/class/hwmon/hwmon2/temp1_input" 
+            //"/sys/class/thermal/thermal_zone2/temp"
+        ],
+        "critical-threshold": 85,
+        "format-critical": "{icon}{temperatureC}°C",
+        "format": "{icon}{temperatureC}°C",
+        "format-icons": [" ", " ", " "],
+        "on-click-right": "kitty --title btop sh -c 'btop'"
+    },
+    "memory": {
+        "interval": 10,
+        "format-alt": "󰍜 {used:0.1f}G",
+        "format": "󰍜 {percentage}%",
+        "format-alt-click": "click",
+        "tooltip": true,
+        "tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
+        "on-click-right": "kitty --title btop sh -c 'btop'"
+    },
+    "battery": {
+      "interval": 60,
+      "states": {
+          "warning": 30,
+          "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-alt": "{icon} {time}",
+      "format-icons": ["", "", "", "", ""],
+      "max-length": 25
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+
+    //main
+    "bluetooth": {
+        "format-connected": "󰂱",
+        "format-no-controller": "󰂲",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "format-on": "",
+        "format-connected-battery": "{icon}",
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "format-icons": ["󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"],
+        "on-click": "exec blueman-manager"
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "{icon}",
+        "format-ethernet": "󰌘",
+        "format-disconnected": "󰌙", 
+        "tooltip-format": "{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "format-linked": "󰈁 {ifname} (No IP)",
+        "tooltip-format-wifi": "{essid} {icon} {signalStrength}%\n\n{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "tooltip-format-ethernet": "{ifname} 󰌘",
+        "tooltip-format-disconnected": "󰌙 Disconnected",
+        "max-length": 50,
+        "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
+    },
+    "backlight": {
+      // "device": "acpi_video1",
+      "format": "󰃟",
+      "tooltip-format": "Brightness: {percent}%"
+    },
+    "wireplumber": {
+      "format": "{icon}",
+      "format-muted": "󰸈",
+      "on-click": "pavucontrol",
+      "format-icons": ["", "", ""],
+      "tooltip-format": "Volume: {volume}%"
+    },
+    "clock": {
+        "interval": 1,
+        "format-alt": " {:%H:%M:%S}",
+        "format": " {:%d %b, %Y   %H:%M}",
+        // "format": " {:%d.%m.%Y  %H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "year",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },             
+        "actions":  {
+          "on-click-right": "mode",
+          "on-click-forward": "tz_up",
+          "on-click-backward": "tz_down",
+          "on-scroll-up": "shift_up",
+          "on-scroll-down": "shift_down"
+        }
+    },
+ 
+    "custom/weather": {
+        "exec": "/home/oshitaka/.config/scripts/get_weather.sh Omsk+Russia",
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "on-click": "bash /home/oshitaka/.config/scripts/get_weather.sh Omsk+Russia",
+        "interval": 3600
+    },
+    
+    "tray": {
+      "icon-size": 12,
+      "spacing": 8
+    },
+
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "US",
+        "format-ru": "RU",
+        "keyboard-name": "gaming-keyboard",
+        //"keyboard-name": "at-translated-set-2-keyboard",
+        "on-click": "hyprctl switchxkblayout gaming-keyboard next"
+        //"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+    },
+
+    // "custom/ip": {
+    //   "format": "{}",
+    //   "exec": "curl -s ifconfig.me",
+    //   "interval": 30
+    // },
+    
+    "network#speed": {
+      "format": " {bandwidthUpBytes}  {bandwidthDownBytes}"
+    },
+
+    "custom/vpn": {
+      "exec": "/home/oshitaka/.config/scripts/vpn.sh",
+      "format": "{}",
+      "return-type": "json",
+      "class": "ip-status",
+      "interval": 120,
+      "on-click": "exec /home/oshitaka/.config/scripts/vpn.sh",
+      "tooltip": true
+    },
+
+    "custom/media": {
+      "format": "{icon} {0}",
+      "return-type": "json",
+      "format-icons": {
+        "Playing": " ",
+        "Paused": " "
+      },
+      "max-length":70,
+      "exec": "playerctl -a metadata --format '{\"text\": \"{{playerName}}: {{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+      "on-click": "playerctl play-pause"
+    },
+
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "",
+        "deactivated": ""
+      }
+    },
+
+    "custom/timer": {
+      "exec": "/home/oshitaka/.config/scripts/waybar-timer.sh updateandprint",
+      "exec-on-event": true,
+      "return-type": "json",
+      "interval": 5,
+      "signal": 4,
+      "format": "{icon} {0}",
+      "format-icons": {
+        "standby": "󰔛:",
+        "running": "󰔛:",
+        "paused": "󰔛:"
+      },
+      "on-click": "/home/oshitaka/.config/scripts/waybar-timer.sh new 25 'notify-send \"Session finished\"'",
+      "on-click-middle": "/home/oshitaka/.config/scripts/waybar-timer.sh cancel",
+      "on-click-right": "/home/oshitaka/.config/scripts/waybar-timer.sh togglepause",
+      "on-scroll-up": "/home/oshitaka/.config/scripts/waybar-timer.sh increase 60 || /home/oshitaka/.config/waybar/scripts/waybar-timer.sh new 1 'notify-send -u critical \"Timer expired.\"'",
+      "on-scroll-down": "/home/oshitaka/.config/scripts/waybar-timer.sh increase -60"
+    },
+
+    "custom/cava": {
+      "format": "{}",
+      "exec": "/home/oshitaka/.config/scripts/waybar_cava.sh --stb 3",
+      "restart-interval": 1,
+      "hide-empty": true
+    }
+}
+
+
