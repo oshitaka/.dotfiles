@@ -206,12 +206,6 @@
         //"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
     },
 
-    // "custom/ip": {
-    //   "format": "{}",
-    //   "exec": "curl -s ifconfig.me",
-    //   "interval": 30
-    // },
-    
     "network#speed": {
       "format": " {bandwidthUpBytes}  {bandwidthDownBytes}"
     },
@@ -221,7 +215,7 @@
       "format": "{}",
       "return-type": "json",
       "class": "ip-status",
-      "interval": 120,
+      "interval": 30,
       "on-click": "exec /home/oshitaka/.config/scripts/vpn.sh",
       "tooltip": true
     },
@@ -235,7 +229,9 @@
       },
       "max-length":70,
       "exec": "playerctl -a metadata --format '{\"text\": \"{{playerName}}: {{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-      "on-click": "playerctl play-pause"
+      "on-click": "playerctl play-pause",
+	  "on-scroll-up": "playerctl next",
+      "on-scroll-down": "playerctl previous"
     },
 
     "idle_inhibitor": {
@@ -270,7 +266,14 @@
       "exec": "/home/oshitaka/.config/scripts/waybar_cava.sh --stb 3",
       "restart-interval": 1,
       "hide-empty": true
+    },
+
+	  "custom/quote": {
+      "exec": "/home/oshitaka/.config/scripts/get_quote.sh",
+      "format": "{}",
+      "max-length": 90,
+      "on-click": "bash /home/oshitaka/.config/scripts/get_quote.sh",
+      "interval": 43200,
+      "tooltip": true
     }
 }
-
-

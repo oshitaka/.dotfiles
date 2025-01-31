@@ -188,7 +188,7 @@ label:focus {
   color: @module;
 }
 
-#custom-cava{
+#custom-cava {
   padding: 0px 4px 0px 3px;
   margin: 0px 3px 0px 3px;
   color: @neutral_blue;
@@ -226,5 +226,10 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-
+#custom-quote {
+	color: @accent;
+	min-width: 100px;
+  padding: 0px 6px 0px 6px;
+  margin: 0px 3px 0px 3px;
+}
 

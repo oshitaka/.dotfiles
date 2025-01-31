@@ -5,7 +5,7 @@
     "layer": "top",
     "position": "top",
     "fixed-center": true,
-    "height": 25,
+    "height": 32,
     "spacing": 9,
     //"margin-top": 5,
     //"margin-left": 7,
@@ -13,8 +13,10 @@
     "reload_style_on_change": true,
 
     "modules-left": ["hyprland/workspaces"],
+    //"modules-left": ["custom/media"],
 
-    "modules-center": ["hyprland/window"],
+    //"modules-center": ["hyprland/window"],
+    "modules-center": ["custom/media"],
 
     "modules-right": [
       "tray",
@@ -31,13 +33,13 @@
     "include": "~/.config/waybar/modules",  
     "layer": "top",
     "position": "bottom",
-    "height": 30,
+    "height": 32,
     "spacing": 10,
     "fixed-center": true,
     "reload_style_on_change": true,
 
-    "modules-center": ["group/indicators"],
-    "modules-left": ["custom/media", "custom/cava"],
+    "modules-center": ["custom/cava", "group/indicators", "custom/cava"],
+	  "modules-left": ["custom/quote"],
     "modules-right": ["network#speed", "custom/vpn"]
   }
 ]
