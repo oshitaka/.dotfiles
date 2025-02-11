@@ -75,7 +75,8 @@ button {
 #backlight,
 #network,
 #pulseaudio,
-#wireplumber{
+#wireplumber,
+#power-profiles-daemon{
     padding: 0px 4px 0px 3px;
     margin: 0px 3px 0px 3px;
     color: @module;

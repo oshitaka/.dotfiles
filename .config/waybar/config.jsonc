@@ -16,7 +16,7 @@
     //"modules-left": ["custom/media"],
 
     //"modules-center": ["hyprland/window"],
-    "modules-center": ["custom/media"],
+    "modules-center": ["custom/cava", "custom/media", "custom/cava"],
 
     "modules-right": [
       "tray",
@@ -38,7 +38,7 @@
     "fixed-center": true,
     "reload_style_on_change": true,
 
-    "modules-center": ["custom/cava", "group/indicators", "custom/cava"],
+    "modules-center": ["group/indicators"],
 	  "modules-left": ["custom/quote"],
     "modules-right": ["network#speed", "custom/vpn"]
   }

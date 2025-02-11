@@ -1,7 +1,8 @@
 #!/usr/bin/bash
 
 ip=$(curl -s ifconfig.me)
-if [[ -d "/proc/sys/net/ipv4/conf/tun0" || -d "/proc/sys/net/ipv4/conf/wg0" ]]; then
+if [[ $ip == "206.188.196.102" ]]; then
+#if [[ -d "/proc/sys/net/ipv4/conf/tun0" || -d "/proc/sys/net/ipv4/conf/vpn0" || -d "/proc/sys/net/ipv4/conf/wg0" ]]; then
   # If the IP matches, set the color to green
   echo "{\"text\": \"$ip 󰌾\", \"class\": \"ip-match\", \"tooltip\":\"secure\"}"
 elif [[ $ip == "" ]]; then

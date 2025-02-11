@@ -37,14 +37,14 @@
             "memory",
             "temperature",
             "disk",
-            "battery",
-            "power-profiles-daemon"
+            "battery"
         ]
     },
 
     "group/main": {
         "orientation": "horizontal",
         "modules": [
+            "power-profiles-daemon",
             "bluetooth",
             "network",
             "backlight",
@@ -58,6 +58,7 @@
         "interval": 1,
         "format": " {usage}%"
     },
+
     "disk": {
         "interval": 30,
         "path": "/",
@@ -65,6 +66,7 @@
         "tooltip": true,
         "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)"
     },
+
     "temperature": {
         "interval": 10,
         "tooltip": false,
@@ -79,6 +81,7 @@
         "format-icons": [" ", " ", " "],
         "on-click-right": "kitty --title btop sh -c 'btop'"
     },
+
     "memory": {
         "interval": 10,
         "format-alt": "󰍜 {used:0.1f}G",
@@ -88,6 +91,7 @@
         "tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
         "on-click-right": "kitty --title btop sh -c 'btop'"
     },
+
     "battery": {
       "interval": 60,
       "states": {
@@ -101,12 +105,13 @@
       "format-icons": ["", "", "", "", ""],
       "max-length": 25
     },
+
     "power-profiles-daemon": {
       "format": "{icon}",
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
       "tooltip": true,
       "format-icons": {
-        "default": "",
+        "default": "",
         "performance": "",
         "balanced": "",
         "power-saver": ""
@@ -129,6 +134,7 @@
         "format-icons": ["󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈"],
         "on-click": "exec blueman-manager"
     },
+
     "network": {
         "format": "{ifname}",
         "format-wifi": "{icon}",
@@ -142,11 +148,13 @@
         "max-length": 50,
         "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
     },
+
     "backlight": {
       // "device": "acpi_video1",
       "format": "󰃟",
       "tooltip-format": "Brightness: {percent}%"
     },
+    
     "wireplumber": {
       "format": "{icon}",
       "format-muted": "󰸈",
@@ -154,6 +162,7 @@
       "format-icons": ["", "", ""],
       "tooltip-format": "Volume: {volume}%"
     },
+
     "clock": {
         "interval": 1,
         "format-alt": " {:%H:%M:%S}",
@@ -263,7 +272,7 @@
 
     "custom/cava": {
       "format": "{}",
-      "exec": "/home/oshitaka/.config/scripts/waybar_cava.sh --stb 3",
+      "exec": "/home/oshitaka/.config/scripts/waybar_cava.sh --stb 1",
       "restart-interval": 1,
       "hide-empty": true
     },
