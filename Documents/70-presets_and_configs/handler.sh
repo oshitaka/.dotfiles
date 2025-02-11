@@ -6,6 +6,10 @@ my_pactl() {
     setpriv --reuid $TARGET_UID sh -c "XDG_RUNTIME_DIR=/run/user/$TARGET_UID pactl $*"
 }
 
+my_playerctl() {
+    setpriv --reuid $TARGET_UID sh -c "XDG_RUNTIME_DIR=/run/user/$TARGET_UID playerctl $*"
+}
+
 case "$1" in
     button/power)
         case "$2" in
@@ -119,7 +123,29 @@ case "$1" in
                 ;;
         esac
         ;;
-    *)
+    cd/play)
+        case "$2" in
+            CDPLAY)
+                my_playerctl play-pause
+                ;;
+        esac
+        ;;
+
+    cd/next)
+        case "$2" in
+            CDNEXT)
+                my_playerctl next
+                ;;
+        esac
+        ;;
+    cd/prev)
+        case "$2" in
+            CDPREV)
+                my_playerctl previous
+                ;;
+        esac
+        ;;
+        *)
         logger "ACPI group/action undefined: $1 / $2"
         ;;
 esac
