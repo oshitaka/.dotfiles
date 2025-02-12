@@ -33,16 +33,18 @@ case "$1" in
         ;;
     ac_adapter)
         case "$2" in
-            AC|ACAD|ADP0)
+            ACPI0003:00)
                 case "$4" in
                     00000000)
                         logger 'AC unpluged'
                         # 20%
                         echo -n 24000 > /sys/class/backlight/intel_backlight/brightness
+                        powerprofilesctl set power-saver
                         ;;
                     00000001)
                         #70%
                         echo -n 84000 > /sys/class/backlight/intel_backlight/brightness
+                        powerprofilesctl set balanced
                         logger 'AC pluged'
                         ;;
                 esac
