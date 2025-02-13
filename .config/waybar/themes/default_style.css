@@ -1,9 +1,8 @@
 /* 
-THIS IS LIGHT GRUVBOX THEME 
+THIS IS DARK GRUVBOX THEME 
 */
 
-/*@import '../../.config/waybar/catppuccin_theme/mocha.css';*/
-@import '../../.config/waybar/gruvbox_theme/colors.css';
+@import '../../.config/waybar/themes/htb.css';
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -13,20 +12,15 @@ THIS IS LIGHT GRUVBOX THEME
     padding: 1px;
 }
 
-/*window#waybar.top {
-    background: alpha(@base, 0.80);
-}*/
 window#waybar.top {
-  /*background: alpha(@dark0, 0.80);*/
-  background: alpha(@dark0, 1.0);
-  /* background: alpha(@light0, 1.0); */
+  background: alpha(@bg, 0.80);
+  /* background: alpha(@bg, 1.0); */
   color: @gray;
 }
 
 window#waybar.bottom {
-  /*background: alpha(@dark0, 0.80);*/
-  background: alpha(@dark0, 1.0);
-  /* background: alpha(@light0, 1.0); */
+  background: alpha(@bg, 0.80);
+  /* background: alpha(@bg, 1.0); */
   color: @gray;
 }
 
@@ -38,8 +32,7 @@ button {
 
 #workspaces button {
   border-color: transparent;
-	/* color: @light3; */
-  color: @dark3;		
+  color: @button;
 	padding: 0 4px;
   padding: 0px 4px;
 	border-bottom: solid 2px transparent;
@@ -56,16 +49,14 @@ button {
 }
 
 #workspaces button.active {
-	color: @light4;
-  /* color: @dark4; */
+	color: @button_active;	
 	padding: 0px 4px;
 	border-bottom: solid 2px;
 	border-radius: 0;
 }
 
 #workspaces button.empty {
-	/*color: @light3;*/
-  color: @dark1;
+  color: @button;
 	padding: 0 2px;
 }
 
@@ -76,8 +67,7 @@ button {
 #custom-weather{
     padding: 0px 4px 0px 3px;
     margin: 0px 3px 0px 3px;
-    /*color: @light2;*/
-    color: @dark4;
+    color: @module;
 }
 
 #language,
@@ -85,25 +75,23 @@ button {
 #backlight,
 #network,
 #pulseaudio,
-#wireplumber{
+#wireplumber,
+#power-profiles-daemon{
     padding: 0px 4px 0px 3px;
     margin: 0px 3px 0px 3px;
-    /*color: @light2;*/
-    color: @dark4;
+    color: @module;
 }
 
 #clock{
     padding: 0px 4px 0px 3px;
     margin: 0px 3px 0px 3px;
-    /*color: @light2;*/
-    color: @dark4;
+    color: @module;
 }
 
 #idle_inhibitor{
   padding: 0px 10px 0px 0px;
   margin: 0px 3px 0px 3px;
-  /*color: @light2;*/
-  color: @dark4;
+  color: @module;
 }
 
 
@@ -112,29 +100,25 @@ button {
 #window{
     padding: 0px 4px 0px 3px;
     margin: 0px 3px 0px 3px;
-    /*color: @light2;*/
-    color: @dark4;
+    color: @module;
 }
 
 #network#speed{
   padding: 0px 1px 0px 3px;
   margin: 0px 1px 0px 3px;
-  /*color: @light2;*/
-  color: @dark4;
+  color: @module;
 }
 
 #custom-cmus{
     padding: 0px 4px 0px 3px;
     margin: 0px 3px 0px 3px;
-    /*color: @light2;*/
-    color: @dark4;
+    color: @module;
 }
 
 #custom-ip{
     padding: 0px 4px 0px 3px;
     margin: 0px 3px 0px 3px;
-    /*color: @light2;*/
-    color: @dark4;
+    color: @module;
 }
 
 #battery,
@@ -145,8 +129,7 @@ button {
 #battery.plugged,
 #battery.charging{
     min-width: 35px;
-    /*color: @light2;*/
-    color: @dark4;
+    color: @module;
     margin: 0px 6px 0px 6px;
 }
 
@@ -203,7 +186,13 @@ label:focus {
 
 .ip-noip {
   /*color:@light2;*/ /* Color when IP does not match */
-  color: @dark4;
+  color: @module;
+}
+
+#custom-cava {
+  padding: 0px 4px 0px 3px;
+  margin: 0px 3px 0px 3px;
+  color: @neutral_blue;
 }
 
 #temperature.critical {
@@ -217,16 +206,14 @@ label:focus {
 }
 
 #custom-media {
-    /*color: @light2;*/
-    color: @dark4;
+    color: @module;
     min-width: 100px;
     padding: 0px 6px 0px 6px;
     margin: 0px 3px 0px 3px;
 }
 
 .timer{
-    /*color: @light2;*/
-    color: @dark4;
+    color: @module;
     padding: 0px 6px 0px 6px;
     margin: 0px 3px 0px 3px;
 }
@@ -240,5 +227,10 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-
+#custom-quote {
+	color: @accent;
+	min-width: 100px;
+  padding: 0px 6px 0px 6px;
+  margin: 0px 3px 0px 3px;
+}
 

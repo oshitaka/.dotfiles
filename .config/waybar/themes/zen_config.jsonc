@@ -1,0 +1,25 @@
+[
+  {
+    //Main
+    "include": "~/.config/waybar/modules",
+    "layer": "top",
+    "position": "top",
+    "fixed-center": true,
+    "height": 32,
+    "spacing": 9,
+    //"margin-top": 5,
+    //"margin-left": 7,
+    //"margin-right": 7,
+    "reload_style_on_change": true,
+
+
+    "modules-center": [
+      "battery",
+	  "tray",
+      "hyprland/language",
+	  "clock",
+      "idle_inhibitor"
+		]
+  }
+]
+

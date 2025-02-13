@@ -1,0 +1,73 @@
+/* 
+THIS IS DARK GRUVBOX THEME 
+*/
+
+@import '../../.config/waybar/themes/htb.css';
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: BigBlueTermPlus Nerd Font, Symbols Nerd Font Mono;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 1px;
+}
+
+window#waybar.top {
+  background: alpha(@bg, 0.20);
+  /* background: alpha(@bg, 1.0); */
+  color: @gray;
+}
+
+#language{
+    padding: 0px 4px 0px 3px;
+    margin: 0px 3px 0px 3px;
+    color: @module;
+	border-bottom: solid 2px;
+}
+
+#clock{
+    padding: 0px 4px 0px 3px;
+    margin: 0px 3px 0px 3px;
+    color: @module;
+	border-bottom: solid 2px;
+}
+
+#idle_inhibitor{
+  padding: 0px 10px 0px 0px;
+  margin: 0px 3px 0px 3px;
+  color: @module;
+  border-bottom: solid 2px;
+}
+
+
+#tray{
+    padding: 0px 4px 0px 3px;
+    margin: 0px 3px 0px 3px;
+    color: @module;
+}
+
+#battery,
+#battery.plugged,
+#battery.charging{
+    min-width: 35px;
+    color: @module;
+    margin: 0px 6px 0px 6px;
+    border-bottom: solid 2px;
+}
+
+#battery.critical:not(.charging) {
+    border-bottom: solid 2px;
+	  border-radius: 0;
+    color: @neutral_red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+

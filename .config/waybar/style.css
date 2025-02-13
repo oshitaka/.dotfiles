@@ -15,7 +15,7 @@ THIS IS DARK GRUVBOX THEME
 window#waybar.top {
   background: alpha(@bg, 0.80);
   /* background: alpha(@bg, 1.0); */
-  color: @gray;
+  color: @grey;
 }
 
 window#waybar.bottom {
