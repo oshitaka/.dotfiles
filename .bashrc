@@ -15,13 +15,13 @@ export TERM="screen-256color"
 eval "$(fzf --bash)"
 
 #groovebox dark
-#PS1='\n\[\e[00;92m\]\u@\h\[\e[m\]\[\e[00;92m\] in \[\e[m\]\[\e[00;92m\]\w\[\e[m\]\[\e[00;92m\] \t \[\e[m\]\n\[\e[00;92m\]>_\[\e[m\] '
+#PS1='\n\[\e[00;92m\]\u@\h\[\e[m\]\[\e[00;92m\] in \[\e[m\]\[\e[00;92m\]\w\[\e[m\]\[\e[00;92m\] \D{%a, %d %b} \t \[\e[m\]\n\[\e[00;92m\]>_\[\e[m\] '
 
 #groovebox light
-PS1='\n\[\e[00;31m\]\u@\h\[\e[m\]\[\e[00;31m\] in \[\e[m\]\[\e[00;31m\]\w\[\e[m\]\[\e[00;31m\] \t \[\e[m\]\n\[\e[00;31m\]>_\[\e[m\] '
+PS1='\n\[\e[00;31m\]\u@\h\[\e[m\]\[\e[00;31m\] in \[\e[m\]\[\e[00;31m\]\w\[\e[m\]\[\e[00;31m\] \D{%a, %d %b} \t \[\e[m\]\n\[\e[00;31m\]>_\[\e[m\] '
 
 #HTB theme
-PS1='\n\u@\h in \w \t \n>_ '
+PS1='\n\u@\h in \w \D{%a, %d %b} \t \n>_ '
 
 #PS1="\e[01;32m┏ \e[00m[\e[01;32m\u@\h\e[00m] in \e[01;32m\w\e[00m\n\e[01;32m┗━ \e[00m$ "
 #PS1="\n\e[01;32m\u@\h\e[00m \e[00;33min\e[00m \e[01;32m\w\e[00m \e[00;33m\❱_\e[00m "
