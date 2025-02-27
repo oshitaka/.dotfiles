@@ -38,7 +38,7 @@ vim.opt.splitbelow = true				-- split go below
 vim.opt.splitright = true				-- vertical split to the right
 vim.opt.termguicolors = true			-- terminal gui colors
 --vim.o.background = "light"
-vim.cmd('colorscheme hackthebox')			-- set colorscheme
+vim.cmd('colorscheme cyberpunk')			-- set colorscheme
 vim.cmd('filetype plugin on')			-- set filetype 
 vim.cmd('set wildmenu')					-- enable wildmenu
 

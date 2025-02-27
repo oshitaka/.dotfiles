@@ -69,12 +69,20 @@ if exists('g:gruvbox_contrast')
   echo 'g:gruvbox_contrast is deprecated; use g:gruvbox_contrast_light and g:gruvbox_contrast_dark instead'
 endif
 
+"if !exists('g:gruvbox_contrast_dark')
+  "let g:gruvbox_contrast_dark='medium'
+"endif
+
+"if !exists('g:gruvbox_contrast_light')
+  "let g:gruvbox_contrast_light='medium'
+"endif
+
 if !exists('g:gruvbox_contrast_dark')
-  let g:gruvbox_contrast_dark='medium'
+  let g:gruvbox_contrast_dark='hard'
 endif
 
 if !exists('g:gruvbox_contrast_light')
-  let g:gruvbox_contrast_light='medium'
+  let g:gruvbox_contrast_light='hard'
 endif
 
 let s:is_dark=(&background == 'dark')

@@ -5,7 +5,7 @@ border-color=#14ffff
 progress-color=over #928374
 
 [urgency=high]
-border-color=#f2201f
+border-color=#F02C35
 
 layer=top
 markup=1

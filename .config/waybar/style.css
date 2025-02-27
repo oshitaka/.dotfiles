@@ -2,7 +2,8 @@
 THIS IS DARK GRUVBOX THEME 
 */
 
-@import '../../.config/waybar/themes/htb.css';
+/* @import '../../.config/waybar/themes/htb.css'; */
+@import '../../.config/waybar/themes/cyberpunk.css';
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -56,18 +57,22 @@ button {
 }
 
 #workspaces button.empty {
-  color: @button;
+  color: @button_empty;
 	padding: 0 2px;
 }
 
 #workspaces button.urgent {
-    background-color: @neutral_red;
+    background-color: @red;
 }
 
 #custom-weather{
-    padding: 0px 4px 0px 3px;
-    margin: 0px 3px 0px 3px;
+    padding: 0px 6px 0px 6px;
     color: @module;
+}
+
+.timer{
+  color: @module;
+  padding: 0px 2px 0px 6px;
 }
 
 #language,
@@ -77,8 +82,7 @@ button {
 #pulseaudio,
 #wireplumber,
 #power-profiles-daemon{
-    padding: 0px 4px 0px 3px;
-    margin: 0px 3px 0px 3px;
+    padding: 0px 7px 0px 6px;
     color: @module;
 }
 
@@ -158,7 +162,7 @@ button {
 #battery.critical:not(.charging) {
     border-bottom: solid 2px;
 	  border-radius: 0;
-    color: @neutral_red;
+    color: @red;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -171,49 +175,44 @@ label:focus {
 }
 
 #custom-vpn {
-  padding: 0px 6px 0px 1px;
+  padding: 0px 7px 0px 5px;
+  /* padding: 0px 6px 0px 3px; */
   margin: 0px 3px 0px 1px;
+  background-color: @black;
 
 }
 
 .ip-match {
-  color:@neutral_green; /* Color when IP matches */
+  color:@green; /* Color when IP matches */
 }
 
 .ip-mismatch {
-  color:@neutral_red; /* Color when IP does not match */
+  color:@red; /* Color when IP does not match */
 }
 
 .ip-noip {
-  /*color:@light2;*/ /* Color when IP does not match */
-  color: @module;
+  color: @module; /* Color when IP does not match */
 }
 
 #custom-cava {
   padding: 0px 4px 0px 3px;
   margin: 0px 3px 0px 3px;
-  color: @neutral_blue;
+  color: @blue;
 }
 
 #temperature.critical {
-    background-color: @neutral_red ;
+    background-color: @red ;
     border-bottom: solid 2px;
 	  border-radius: 0;
 }
 
 #network.disconnected {
-    color: @neutral_red ;
+    color: @red ;
 }
 
 #custom-media {
     color: @module;
     min-width: 100px;
-    padding: 0px 6px 0px 6px;
-    margin: 0px 3px 0px 3px;
-}
-
-.timer{
-    color: @module;
     padding: 0px 6px 0px 6px;
     margin: 0px 3px 0px 3px;
 }

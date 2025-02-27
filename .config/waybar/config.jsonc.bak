@@ -7,9 +7,9 @@
     "fixed-center": true,
     "height": 32,
     "spacing": 9,
-    "margin-top": 8,
-    "margin-left": 10,
-    "margin-right": 10,
+    "margin-top": 5,
+    "margin-left": 7,
+    "margin-right": 7,
     "reload_style_on_change": true,
 
     "modules-left": ["hyprland/workspaces"],
@@ -36,9 +36,6 @@
     "height": 32,
     "spacing": 10,
     "fixed-center": true,
-    "margin-bottom": 8,
-    "margin-left": 10,
-    "margin-right": 10,
     "reload_style_on_change": true,
 
     "modules-center": ["group/indicators"],

@@ -1,13 +1,17 @@
-@define-color bg              #282828; 
+@define-color bg              #1d2021; 
 @define-color button          #665c54; 
+@define-color button_active   #a89984;
+@define-color button_empty    #a89984;
 @define-color module          #7c6f64; 
+@define-color accent   		    #d65d0e; 
 
 @define-color gray            #928374; 
+@define-color red             #cc241d; 
+@define-color green           #98971a;
+@define-color yellow          #d79921;
+@define-color blue            #458588;
+@define-color purple          #b16286;
+@define-color aqua            #689d6a;
+@define-color orange          #d65d0e;
 
-@define-color button_active   #a89984; 
 
-@define-color neutral_red     #cc241d; 
-@define-color neutral_green   #98971a;
-@define-color neutral_blue    #458588;
-
-@define-color accent   		    #d65d0e; 
