@@ -62,7 +62,7 @@ button {
 }
 
 #workspaces button.urgent {
-    background-color: @red;
+    background-color: @accent;
 }
 
 #custom-weather{
@@ -122,7 +122,6 @@ button {
 #custom-ip{
     padding: 0px 4px 0px 3px;
     margin: 0px 3px 0px 3px;
-    color: @module;
 }
 
 #battery,
@@ -183,11 +182,13 @@ label:focus {
 }
 
 .ip-match {
-  color:@green; /* Color when IP matches */
+  color:@granted; /* Color when IP matches */
 }
 
 .ip-mismatch {
-  color:@red; /* Color when IP does not match */
+  /* Color when IP does not match */
+  /* color:@urgent;  */
+  color:@red; 
 }
 
 .ip-noip {
@@ -197,17 +198,17 @@ label:focus {
 #custom-cava {
   padding: 0px 4px 0px 3px;
   margin: 0px 3px 0px 3px;
-  color: @blue;
+  color: @accent;
 }
 
 #temperature.critical {
-    background-color: @red ;
+    background-color: @urgent;
     border-bottom: solid 2px;
 	  border-radius: 0;
 }
 
 #network.disconnected {
-    color: @red ;
+    color: @urgent;
 }
 
 #custom-media {

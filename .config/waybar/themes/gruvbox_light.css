@@ -4,6 +4,8 @@
 @define-color button_active   #665c54; 
 @define-color module          #7c6f64; 
 @define-color accent   		    #b16286; 
+@define-color urgent          #cc241d;
+@define-color granted         #98971a; 
 
 @define-color gray            #928374; 
 @define-color red             #cc241d; 

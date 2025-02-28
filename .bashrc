@@ -71,8 +71,8 @@ if [ "$TERM" = "linux" ]; then
     echo -en "\e]PC14ffff" #blue
     echo -en "\e]P5f902e7" #magenta
     echo -en "\e]PD9c004b" #darkmagenta
-    echo -en "\e]P6FFFC4C" #darkcyan
-    echo -en "\e]PE00FFB3" #cyan
+    echo -en "\e]P600FFB3" #cyan
+    echo -en "\e]PEFFFC4C" #darkcyan
     echo -en "\e]P7BDC3C7" #lightgrey
     echo -en "\e]PFC1DEFF" #white
     setterm -foreground magenta -store

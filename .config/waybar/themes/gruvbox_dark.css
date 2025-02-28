@@ -3,7 +3,9 @@
 @define-color button_active   #a89984;
 @define-color button_empty    #a89984;
 @define-color module          #7c6f64; 
-@define-color accent   		    #d65d0e; 
+@define-color accent   		    #d65d0e;
+@define-color urgent          #cc241d;
+@define-color granted         #98971a; 
 
 @define-color gray            #928374; 
 @define-color red             #cc241d; 
