@@ -5,16 +5,28 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+################
+# BISIC TWEAKS #
+################ 
+
 # Coloring some commands
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 #PS1='[\u@\h \W]\$'
 
-#export TERM=screen-256color
+export TERM=screen-256color
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
+
+#Save command story regadless of windows
+shopt -s histappend
+PROMPT_COMMAND='history -a'
+
+############
+# THEMEING #
+############
 
 # Set right alighment 
 function git_branch() {
@@ -34,7 +46,7 @@ function right_prompt() {
   printf "%*s" $width "<< $branch :: $date_time"
 }
 
-PROMPT_COMMAND='right_promt'
+#PROMPT_COMMAND='right_promt'
 
 # groovebox dark
 #PS1='\n\[\e[00;92m\]\u@\h\[\e[m\]\[\e[00;92m\] in \[\e[m\]\[\e[00;92m\]\w\[\e[m\]\[\e[00;92m\] \D{%a, %d %b} \t \[\e[m\]\n\[\e[00;92m\]>_\[\e[m\] '
@@ -46,19 +58,13 @@ PROMPT_COMMAND='right_promt'
 #PS1='\n\u@\h in \w \[$(right_prompt) \t \n>_ '
 
 # cyberpunk theme 
-PS1='\n\[\e[00;36m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;36m\]\w\[\e[m\] >> \[$(right_prompt)\n\[\e[00;33m\]>_\[\e[m\] '
+PS1='\n\[\e[00;36m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;36m\]\w\[\e[m\] \[\e[00;33m\]>>\[\e[m\] \[\e[00;33m\]\[$(right_prompt)\[\e[m\]\n\[\e[00;33m\]>\[\e[m\] '
 
-#PS1="\e[01;32m┏ \e[00m[\e[01;32m\u@\h\e[00m] in \e[01;32m\w\e[00m\n\e[01;32m┗━ \e[00m$ "
-#PS1="\n\e[01;32m\u@\h\e[00m \e[00;33min\e[00m \e[01;32m\w\e[00m \e[00;33m\❱_\e[00m "
-#PS1="\n\e[00;32m\e[00m\e[00;32m\u@\h\e[00m \e[00;33min\e[00m \e[00;32m\w\e[00m\n\e[00;33m❱_\e[00m "
+# minimal theme
 #PS2="\e[00;32m>_ "
 
-#Save command story regadless of windows
-shopt -s histappend
-PROMPT_COMMAND='history -a'
-
 # cyberpunk colors for tty
-if [ "$TERM" = "linux" ]; then
+if [ "$TERM" = "screen-256color" ]; then
     echo -en "\e]P0141d2b" #black
     echo -en "\e]P87B8097" #darkgrey
     echo -en "\e]P1FF0000" #darkred
@@ -79,7 +85,10 @@ if [ "$TERM" = "linux" ]; then
     clear #for background artifacting
 fi
 
-# Aliases
+####################
+# PERSONAL ALIASES #
+####################
+
 alias po="sudo shutdown now"
 alias rb="sudo reboot"
 alias upd="sudo pacman -Syu && paru -Syu"

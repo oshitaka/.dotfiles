@@ -90,7 +90,7 @@ function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
--- reload config
+-- relonetrw tree view ad config
 map("n", "<leader>r", ":source ~/.config/nvim/init.lua<CR>")	-- reload neovim config
 
 -- Tab bindings 
@@ -115,11 +115,23 @@ map("n", "<S-Tab>", ":bprevious <CR>")			-- Shift+Tab goes to previous buffer
 map("n", "<leader>d", ":bd! <CR>")				-- Space+d delets current buffer
 
 -- adjust split sizes easier
-map("n", "<C-Left>", ":vertical resize +3<CR>")		-- Control+Left resizes vertical split +
-map("n", "<C-Right>", ":vertical resize -3<CR>")	-- Control+Right resizes vertical split -
+map("n", "<C-Left>", ":vertical resize +3<CR>")		-- Alt+Control+Left resizes vertical split +
+map("n", "<C-Right>", ":vertical resize -3<CR>")	-- Alt+Control+Right resizes vertical split -
 
 -- Open netrw in 25% split in tree view
 map("n", "<leader>e", ":25Lex<CR>")			-- space+e toggles netrw tree view 
+-- use ctrl+w combo to initiate move then press one of keys
+-- w - move to the next
+-- h - move to the left
+-- j - move to the bottom
+-- k - move to the top
+-- l - move to the right
+
+-- Use Enter to enter directory and "-" to go back
+-- Use Enter to open file in horizontal split
+-- t - open file in new tab
+-- v - open file in vertical split
+
 
 -- Automatically create if, case, and function templates
 map("n", "<leader>i", "iif [ @ ]; then <CR><CR> else <CR><CR> fi <ESC>/@ <CR>")
@@ -145,7 +157,7 @@ map("i", ",c", "case \"$@\" in <CR><CR> @)    ;; <CR><CR> esac")
 map("i", ",f", "@() {<CR><CR> } ")
 
 -- Visual Maps
-map("v", "<leader>r", "\"hy:%s/<C-r>h//g<left><left>")			    -- Replace all instances of highlighted words 
+map("v", "<leader>r", "\"hy:%s/<C-r>h//g<left><left>")		    -- Replace all instances of highlighted words 
 map("v", "<C-s>", ":sort<CR>")									-- Sort highlighted text in visual mode with Control+S
 map("v", "J", ":m '>+1<CR>gv=gv")								-- Move current line down
 map("v", "K", ":m '>-2<CR>gv=gv")								-- Move current line up 
