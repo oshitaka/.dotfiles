@@ -1,11 +1,11 @@
 @define-color bg              #E7C630; 
 @define-color button          #FFFC4C;  
-@define-color button_active   #14ffff; 
+@define-color button_active   #A700FF; 
 @define-color button_empty    #FFFC4C; 
 @define-color module          #141d2b; 
-@define-color accent   		    #14ffff;
+@define-color accent   		    #A700FF;
 @define-color urgent          #F02C35;
-@define-color granted         #00FF00;
+@define-color granted         #00BFAE;
 
 @define-color gray            #BDC3C7; 
 @define-color red             #F02C35; 

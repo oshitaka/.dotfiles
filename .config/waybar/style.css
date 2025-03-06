@@ -14,14 +14,14 @@ THIS IS DARK GRUVBOX THEME
 }
 
 window#waybar.top {
-  background: alpha(@bg, 0.80);
-  /* background: alpha(@bg, 1.0); */
+  /* background: alpha(@bg, 0.80); */
+  background: alpha(@bg, 1.0);
   color: @grey;
 }
 
 window#waybar.bottom {
-  background: alpha(@bg, 0.80);
-  /* background: alpha(@bg, 1.0); */
+  /* background: alpha(@bg, 0.80); */
+  background: alpha(@bg, 1.0);
   color: @gray;
 }
 
@@ -177,7 +177,7 @@ label:focus {
   padding: 0px 7px 0px 5px;
   /* padding: 0px 6px 0px 3px; */
   margin: 0px 3px 0px 1px;
-  background-color: @black;
+  /* background-color: @black; */
 
 }
 

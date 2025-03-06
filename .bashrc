@@ -58,7 +58,7 @@ function right_prompt() {
 #PS1='\n\u@\h in \w \[$(right_prompt) \t \n>_ '
 
 # cyberpunk theme 
-PS1='\n\[\e[00;36m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;36m\]\w\[\e[m\] \[\e[00;33m\]>>\[\e[m\] \[\e[00;33m\]\[$(right_prompt)\[\e[m\]\n\[\e[00;33m\]>\[\e[m\] '
+PS1='\n\[\e[00;35m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;35m\]\w\[\e[m\] \[\e[00;33m\]>>\[\e[m\] \[\e[00;33m\]\[$(right_prompt)\[\e[m\]\n\[\e[00;33m\]>\[\e[m\] '
 
 # minimal theme
 #PS2="\e[00;32m>_ "
@@ -67,21 +67,21 @@ PS1='\n\[\e[00;36m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;36m\]\w\[\e[m\
 if [ "$TERM" = "screen-256color" ]; then
     echo -en "\e]P0141d2b" #black
     echo -en "\e]P87B8097" #darkgrey
-    echo -en "\e]P1FF0000" #darkred
-    echo -en "\e]P9F02C35" #red
-    echo -en "\e]P2f902e7" #darkgreen
-    echo -en "\e]PA00FF00" #green
+    echo -en "\e]P1F02C35" #red
+    echo -en "\e]P9FF0000" #darkred
+    echo -en "\e]P200FF00" #green
+    echo -en "\e]PAf902e7" #darkgreen
     echo -en "\e]P3E7C630" #darkyellow
     echo -en "\e]PBFFFC4C" #yellow
-    echo -en "\e]P4F57800" #darkblue
-    echo -en "\e]PC14ffff" #blue
+    echo -en "\e]P414ffff" #darkblue
+    echo -en "\e]PCF57800" #blue
     echo -en "\e]P5f902e7" #magenta
     echo -en "\e]PD9c004b" #darkmagenta
     echo -en "\e]P600FFB3" #cyan
-    echo -en "\e]PEFFFC4C" #darkcyan
+    echo -en "\e]PE00FFB3" #darkcyan
     echo -en "\e]P7BDC3C7" #lightgrey
     echo -en "\e]PFC1DEFF" #white
-    setterm -foreground magenta -store
+    setterm -term linux -foreground cyan -store
     clear #for background artifacting
 fi
 
