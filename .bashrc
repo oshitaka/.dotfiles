@@ -49,6 +49,17 @@ function venv() {
   fi
 }
 
+function battery() {
+    # Check if battery information exists
+  if [ -f /sys/class/power_supply/BAT0/capacity ]; then
+    # Read the percentage value
+    capacity=$(cat /sys/class/power_supply/BAT0/capacity)
+    echo "[${capacity}%]"
+  else
+    echo "N/A"
+  fi
+}
+
 # groovebox dark
 #PS1='\n\[\e[00;92m\]\u@\h\[\e[m\]\[\e[00;92m\] in \[\e[m\]\[\e[00;92m\]\w\[\e[m\]\[\e[00;92m\] \D{%a, %d %b} \t \[\e[m\]\n\[\e[00;92m\]>_\[\e[m\] '
 
@@ -59,7 +70,7 @@ function venv() {
 #PS1='\n\u@\h in \w \[$(right_prompt) \t \n>_ '
 
 # cyberpunk theme 
-PS1='\n\[\e[00;35m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;35m\]\w\[\e[m\] $(git_branch)\[\e[00;33m\]::\[\e[m\] \[\e[00;33m\]\[\D{%a, %d %b} \t\[\e[m\]\n$(venv)\[\e[00;33m\]>\[\e[m\] '
+PS1='\n\[\e[00;35m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;35m\]\w\[\e[m\] $(git_branch)\[\e[00;33m\]::\[\e[m\] \[\e[00;33m\]\[\D{%a, %d %b} \t $(battery)\[\e[m\]\n$(venv)\[\e[00;33m\]>\[\e[m\] '
 
 # cyberpunk theme with right prompt
 #PS1='\n\[\e[00;35m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;35m\]\w\[\e[m\] \[\e[00;33m\]>>\[\e[m\] $(right_prompt)\n\[\e[00;33m\]>\[\e[m\] '
