@@ -17,10 +17,10 @@ alias ip='ip -color=auto'
 
 export TERM=screen-256color
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export FZF_TMUX=1
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
+export FZF_TMUX=1
 
 #Save command story regadless of windows
 shopt -s histappend
@@ -37,7 +37,15 @@ function git_branch() {
   local color_on="\033[0;33m"
   local color_reset="\033[0m"
   if [ -n "$branch" ]; then
-    echo -e "${color_on}on${color_reset} ${color_branch}[${branch}]${color_reset}"
+    echo -e "${color_on}on${color_reset} ${color_branch}[${branch}]${color_reset} "
+  fi
+}
+
+function venv() {
+  local color_env="\033[0;32m"
+  local color_reset="\033[0m"
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    echo -e "${color_env}[$(basename $VIRTUAL_ENV)]${color_reset}";
   fi
 }
 
@@ -51,7 +59,7 @@ function git_branch() {
 #PS1='\n\u@\h in \w \[$(right_prompt) \t \n>_ '
 
 # cyberpunk theme 
-PS1='\n\[\e[00;35m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;35m\]\w\[\e[m\] $(git_branch) \[\e[00;33m\]::\[\e[m\] \[\e[00;33m\]\[\D{%a, %d %b} \t\[\e[m\]\n$(if [[ -n "$VIRTUAL_ENV" ]]; then echo "[$(basename $VIRTUAL_ENV)]"; fi)\[\e[00;33m\]>\[\e[m\] '
+PS1='\n\[\e[00;35m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;35m\]\w\[\e[m\] $(git_branch)\[\e[00;33m\]::\[\e[m\] \[\e[00;33m\]\[\D{%a, %d %b} \t\[\e[m\]\n$(venv)\[\e[00;33m\]>\[\e[m\] '
 
 # cyberpunk theme with right prompt
 #PS1='\n\[\e[00;35m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;35m\]\w\[\e[m\] \[\e[00;33m\]>>\[\e[m\] $(right_prompt)\n\[\e[00;33m\]>\[\e[m\] '
