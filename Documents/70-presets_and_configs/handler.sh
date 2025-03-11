@@ -1,5 +1,6 @@
 #!/bin/bash
 # Default acpi script that takes an entry for all actions
+# paste this file to /etc/acpi
 
 TARGET_UID=1000
 my_pactl() {

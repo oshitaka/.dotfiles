@@ -16,6 +16,8 @@ alias ip='ip -color=auto'
 #PS1='[\u@\h \W]\$'
 
 export TERM=screen-256color
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+export FZF_TMUX=1
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
@@ -31,22 +33,13 @@ PROMPT_COMMAND='history -a'
 # Set right alighment 
 function git_branch() {
   local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-  if [ $? -eq 0 ]; then
-    echo "[$branch]"
-  else
-    echo ""
+  local color_branch="\033[0;32m"
+  local color_on="\033[0;33m"
+  local color_reset="\033[0m"
+  if [ -n "$branch" ]; then
+    echo -e "${color_on}on${color_reset} ${color_branch}[${branch}]${color_reset}"
   fi
 }
-
-function right_prompt() {
-  local date_time=$(date +'%a, %d %b %H:%M:%S')
-  local branch=$(git_branch)
-  local left_part="\u@\h in \w" 
-  local width=$(( $COLUMNS - ${#left_part} - ${#PWD} +3 ))
-  printf "%*s" $width "<< $branch :: $date_time"
-}
-
-#PROMPT_COMMAND='right_promt'
 
 # groovebox dark
 #PS1='\n\[\e[00;92m\]\u@\h\[\e[m\]\[\e[00;92m\] in \[\e[m\]\[\e[00;92m\]\w\[\e[m\]\[\e[00;92m\] \D{%a, %d %b} \t \[\e[m\]\n\[\e[00;92m\]>_\[\e[m\] '
@@ -58,27 +51,30 @@ function right_prompt() {
 #PS1='\n\u@\h in \w \[$(right_prompt) \t \n>_ '
 
 # cyberpunk theme 
-PS1='\n\[\e[00;35m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;35m\]\w\[\e[m\] \[\e[00;33m\]>>\[\e[m\] \[\e[00;33m\]\[$(right_prompt)\[\e[m\]\n\[\e[00;33m\]>\[\e[m\] '
+PS1='\n\[\e[00;35m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;35m\]\w\[\e[m\] $(git_branch) \[\e[00;33m\]::\[\e[m\] \[\e[00;33m\]\[\D{%a, %d %b} \t\[\e[m\]\n$(if [[ -n "$VIRTUAL_ENV" ]]; then echo "[$(basename $VIRTUAL_ENV)]"; fi)\[\e[00;33m\]>\[\e[m\] '
+
+# cyberpunk theme with right prompt
+#PS1='\n\[\e[00;35m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;35m\]\w\[\e[m\] \[\e[00;33m\]>>\[\e[m\] $(right_prompt)\n\[\e[00;33m\]>\[\e[m\] '
 
 # minimal theme
-#PS2="\e[00;32m>_ "
+#PS1="\e[00;32m>_ "
 
 # cyberpunk colors for tty
 if [ "$TERM" = "screen-256color" ]; then
     echo -en "\e]P0141d2b" #black
     echo -en "\e]P87B8097" #darkgrey
-    echo -en "\e]P1F02C35" #red
-    echo -en "\e]P9FF0000" #darkred
-    echo -en "\e]P200FF00" #green
-    echo -en "\e]PAf902e7" #darkgreen
+    echo -en "\e]P1F02C35" #darkred
+    echo -en "\e]P9FF0000" #red
+    echo -en "\e]P200FF00" #darkgreen
+    echo -en "\e]PAf902e7" #green
     echo -en "\e]P3E7C630" #darkyellow
     echo -en "\e]PBFFFC4C" #yellow
     echo -en "\e]P414ffff" #darkblue
     echo -en "\e]PCF57800" #blue
-    echo -en "\e]P5f902e7" #magenta
-    echo -en "\e]PD9c004b" #darkmagenta
-    echo -en "\e]P600FFB3" #cyan
-    echo -en "\e]PE00FFB3" #darkcyan
+    echo -en "\e]P5f902e7" #darkmagenta
+    echo -en "\e]PD9c004b" #magenta
+    echo -en "\e]P600FFB3" #darkcyan
+    echo -en "\e]PE00FFB3" #cyan
     echo -en "\e]P7BDC3C7" #lightgrey
     echo -en "\e]PFC1DEFF" #white
     setterm -term linux -foreground cyan -store
