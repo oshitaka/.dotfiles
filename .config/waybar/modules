@@ -251,38 +251,38 @@
       }
     },
 
-    "custom/timer": {
-      "exec": "/home/oshitaka/.config/scripts/waybar-timer.sh updateandprint",
-      "exec-on-event": true,
-      "return-type": "json",
-      "interval": 5,
-      "signal": 4,
-      "format": "{icon} {0}",
-      "format-icons": {
-        "standby": "󰔛:",
-        "running": "󰔛:",
-        "paused": "󰔛:"
-      },
-      "on-click": "/home/oshitaka/.config/scripts/waybar-timer.sh new 25 'notify-send \"Session finished\"'",
-      "on-click-middle": "/home/oshitaka/.config/scripts/waybar-timer.sh cancel",
-      "on-click-right": "/home/oshitaka/.config/scripts/waybar-timer.sh togglepause",
-      "on-scroll-up": "/home/oshitaka/.config/scripts/waybar-timer.sh increase 60 || /home/oshitaka/.config/waybar/scripts/waybar-timer.sh new 1 'notify-send -u critical \"Timer expired.\"'",
-      "on-scroll-down": "/home/oshitaka/.config/scripts/waybar-timer.sh increase -60"
-    },
-
     "custom/cava": {
       "format": "{}",
       "exec": "/home/oshitaka/.config/scripts/waybar_cava.sh --stb 1",
       "restart-interval": 1,
       "hide-empty": true
-    },
-
-	  "custom/quote": {
-      "exec": "/home/oshitaka/.config/scripts/get_quote.sh",
-      "format": "{}",
-      "max-length": 90,
-      "on-click": "bash /home/oshitaka/.config/scripts/get_quote.sh",
-      "interval": 43200,
-      "tooltip": true
     }
+
+    // "custom/timer": {
+    //   "exec": "/home/oshitaka/.config/scripts/waybar-timer.sh updateandprint",
+    //   "exec-on-event": true,
+    //   "return-type": "json",
+    //   "interval": 5,
+    //   "signal": 4,
+    //   "format": "{icon} {0}",
+    //   "format-icons": {
+    //     "standby": "󰔛:",
+    //     "running": "󰔛:",
+    //     "paused": "󰔛:"
+    //   },
+    //   "on-click": "/home/oshitaka/.config/scripts/waybar-timer.sh new 25 'notify-send \"Session finished\"'",
+    //   "on-click-middle": "/home/oshitaka/.config/scripts/waybar-timer.sh cancel",
+    //   "on-click-right": "/home/oshitaka/.config/scripts/waybar-timer.sh togglepause",
+    //   "on-scroll-up": "/home/oshitaka/.config/scripts/waybar-timer.sh increase 60 || /home/oshitaka/.config/waybar/scripts/waybar-timer.sh new 1 'notify-send -u critical \"Timer expired.\"'",
+    //   "on-scroll-down": "/home/oshitaka/.config/scripts/waybar-timer.sh increase -60"
+    // },
+
+	  // "custom/quote": {
+    //   "exec": "/home/oshitaka/.config/scripts/get_quote.sh",
+    //   "format": "{}",
+    //   "max-length": 90,
+    //   "on-click": "bash /home/oshitaka/.config/scripts/get_quote.sh",
+    //   "interval": 43200,
+    //   "tooltip": true
+    // }
 }

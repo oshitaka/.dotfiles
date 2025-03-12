@@ -12,11 +12,11 @@
     "margin-right": 10,
     "reload_style_on_change": true,
 
-    "modules-left": ["custom/vpn", "network#speed", "group/indicators"],
+    "modules-left": ["hyprland/workspaces"],
     //"modules-left": ["custom/media"],
 
     //"modules-center": ["hyprland/window"],
-    "modules-center": ["hyprland/workspaces"],
+    "modules-center": ["custom/cava", "custom/media", "custom/cava"],
 
     "modules-right": [
       "tray",
@@ -26,6 +26,22 @@
 		  "clock",
       "idle_inhibitor"
 		]
+  },
+
+  {
+    "include": "~/.config/waybar/modules",  
+    "layer": "top",
+    "position": "bottom",
+    "height": 32,
+    "spacing": 10,
+    "fixed-center": true,
+    "margin-bottom": 8,
+    "margin-left": 10,
+    "margin-right": 10,
+    "reload_style_on_change": true,
+
+    "modules-center": ["group/indicators"],
+	  "modules-right": ["network#speed", "custom/vpn"]
   }
 ]
 

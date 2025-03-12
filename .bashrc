@@ -18,9 +18,16 @@ alias ip='ip -color=auto'
 export TERM=screen-256color
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-# Set up fzf key bindings and fuzzy completion
+# fzf config
 eval "$(fzf --bash)"
 export FZF_TMUX=1
+export FZF_DEFAULT_OPTS="
+  --cycle \
+  --reverse \
+  --multi \
+  --ansi \
+  --bind 'ctrl-y:execute-silent(printf {} | cut -f 2- | wl-copy --trim-newline)'
+"
 
 #Save command story regadless of windows
 shopt -s histappend
@@ -30,22 +37,22 @@ PROMPT_COMMAND='history -a'
 # THEMEING #
 ############
 
-# Set right alighment 
+# display additional info
 function git_branch() {
   local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-  local color_branch="\033[0;32m"
+  local color_branch="\033[0;35m"
   local color_on="\033[0;33m"
   local color_reset="\033[0m"
   if [ -n "$branch" ]; then
-    echo -e "${color_on}on${color_reset} ${color_branch}[${branch}]${color_reset} "
+    echo -e "${color_on}on${color_reset} ${color_branch}${branch}${color_reset} "
   fi
 }
 
 function venv() {
-  local color_env="\033[0;32m"
+  local color="\033[0;35m"
   local color_reset="\033[0m"
   if [[ -n "$VIRTUAL_ENV" ]]; then
-    echo -e "${color_env}[$(basename $VIRTUAL_ENV)]${color_reset}";
+    echo -e " ${color}$(basename $VIRTUAL_ENV)${color_reset}";
   fi
 }
 
@@ -54,11 +61,21 @@ function battery() {
   if [ -f /sys/class/power_supply/BAT0/capacity ]; then
     # Read the percentage value
     capacity=$(cat /sys/class/power_supply/BAT0/capacity)
-    echo "[${capacity}%]"
-  else
-    echo "N/A"
+    echo "${capacity}%"
   fi
 }
+
+function active_vpn() {
+  local active_vpn=$(nmcli connection show --active | grep -E 'wg0|Openconnect')
+  local color="\033[0;32m"
+  local color_reset="\033[0m"
+  if [[ -n "$active_vpn" ]]; then
+    echo -e " ${color}VPN${color_reset}"
+  fi
+}
+
+# minimal theme
+#PS1="\e[00;32m>_ "
 
 # groovebox dark
 #PS1='\n\[\e[00;92m\]\u@\h\[\e[m\]\[\e[00;92m\] in \[\e[m\]\[\e[00;92m\]\w\[\e[m\]\[\e[00;92m\] \D{%a, %d %b} \t \[\e[m\]\n\[\e[00;92m\]>_\[\e[m\] '
@@ -67,16 +84,10 @@ function battery() {
 #PS1='\n\[\e[00;31m\]\u@\h\[\e[m\]\[\e[00;31m\] in \[\e[m\]\[\e[00;31m\]\w\[\e[m\]\[\e[00;31m\] \D{%a, %d %b} \t \[\e[m\]\n\[\e[00;31m\]>_\[\e[m\] '
 
 # HTB theme
-#PS1='\n\u@\h in \w \[$(right_prompt) \t \n>_ '
+#PS1='\n\u@\h in \w :: \t \n>_ '
 
 # cyberpunk theme 
-PS1='\n\[\e[00;35m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;35m\]\w\[\e[m\] $(git_branch)\[\e[00;33m\]::\[\e[m\] \[\e[00;33m\]\[\D{%a, %d %b} \t $(battery)\[\e[m\]\n$(venv)\[\e[00;33m\]>\[\e[m\] '
-
-# cyberpunk theme with right prompt
-#PS1='\n\[\e[00;35m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;35m\]\w\[\e[m\] \[\e[00;33m\]>>\[\e[m\] $(right_prompt)\n\[\e[00;33m\]>\[\e[m\] '
-
-# minimal theme
-#PS1="\e[00;32m>_ "
+PS1='\n\[\e[00;35m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;35m\]\w\[\e[m\] $(git_branch)\[\e[00;33m\]>>\[\e[m\] [$(battery)$(active_vpn)$(venv)] \[\e[00;33m\]>>\[\e[m\] \[\e[00;33m\]\[\D{%a, %d %b} \t\[\e[m\]\n\[\e[00;33m\]>\[\e[m\] '
 
 # cyberpunk colors for tty
 if [ "$TERM" = "screen-256color" ]; then
@@ -121,7 +132,7 @@ alias hib="systemctl hibernate"
 alias usba="sudo usbguard allow-device"
 alias open="ouch decompress"
 alias HH="Hyprland"
-alias del="sudo pacman -Runsc"
+alias del="sudo pacman -Runs"
 alias cloud="ssh -i /home/oshitaka/.ssh/id_ed25519_cloudru user@176.108.251.97"
 alias connect="sudo openconnect oshitaka.duckdns.org/?placebehindthewall -u main"
 alias icat="kitten icat"
