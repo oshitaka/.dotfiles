@@ -48,6 +48,8 @@
             "bluetooth",
             "network",
             "backlight",
+            "custom/mic",
+            "custom/webcam",
             "wireplumber"
         ]
     },
@@ -215,9 +217,9 @@
         //"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
     },
 
-    "network#speed": {
-      "format": " {bandwidthUpBytes}  {bandwidthDownBytes}"
-    },
+    // "network#speed": {
+    //   "format": " {bandwidthUpBytes}  {bandwidthDownBytes}"
+    // },
 
     "custom/vpn": {
       "exec": "/home/oshitaka/.config/scripts/vpn.sh",
@@ -229,19 +231,19 @@
       "tooltip": true
     },
 
-    "custom/media": {
-      "format": "{icon} {0}",
-      "return-type": "json",
-      "format-icons": {
-        "Playing": " ",
-        "Paused": " "
-      },
-      "max-length":70,
-      "exec": "playerctl -a metadata --format '{\"text\": \"{{playerName}}: {{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-      "on-click": "playerctl play-pause",
-	  "on-scroll-up": "playerctl next",
-      "on-scroll-down": "playerctl previous"
-    },
+    // "custom/media": {
+    //   "format": "{icon} {0}",
+    //   "return-type": "json",
+    //   "format-icons": {
+    //     "Playing": " ",
+    //     "Paused": " "
+    //   },
+    //   "max-length":70,
+    //   "exec": "playerctl -a metadata --format '{\"text\": \"{{playerName}}: {{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    //   "on-click": "playerctl play-pause",
+	  // "on-scroll-up": "playerctl next",
+    //   "on-scroll-down": "playerctl previous"
+    // },
 
     "idle_inhibitor": {
       "format": "{icon}",
@@ -251,12 +253,29 @@
       }
     },
 
-    "custom/cava": {
-      "format": "{}",
-      "exec": "/home/oshitaka/.config/scripts/waybar_cava.sh --stb 1",
-      "restart-interval": 1,
-      "hide-empty": true
-    }
+    "custom/mic": {
+      "exec": "~/.config/scripts/mic_status.sh",
+      "on-click": "exec /home/oshitaka/.config/scripts/mic_toggle.sh",
+      "interval": 1,
+      "tooltip": false,
+      // "return-type": "json",
+      "format": "{}"
+  },
+
+  "custom/webcam": {
+    "exec": "/home/oshitaka/.config/scripts/webcam.sh",
+    "interval": 10,
+    "tooltip": true,
+    "return-type": "json",
+    "format": "{}"
+}
+
+    // "custom/cava": {
+    //   "format": "{}",
+    //   "exec": "/home/oshitaka/.config/scripts/waybar_cava.sh --stb 1",
+    //   "restart-interval": 1,
+    //   "hide-empty": true
+    // }
 
     // "custom/timer": {
     //   "exec": "/home/oshitaka/.config/scripts/waybar-timer.sh updateandprint",

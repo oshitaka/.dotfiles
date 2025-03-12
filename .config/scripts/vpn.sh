@@ -4,11 +4,11 @@ ip=$(curl -s ifconfig.me)
 if [[ $ip == "206.188.196.102" ]]; then
 #if [[ -d "/proc/sys/net/ipv4/conf/tun0" || -d "/proc/sys/net/ipv4/conf/vpn0" || -d "/proc/sys/net/ipv4/conf/wg0" ]]; then
   # If the IP matches, set the color to green
-  echo "{\"text\": \"$ip 󰌾\", \"class\": \"ip-match\", \"tooltip\":\"secure\"}"
+  echo "{\"text\": \"󰌾 $ip\", \"class\": \"ip-match\", \"tooltip\":\"secure\"}"
 elif [[ $ip == "" ]]; then
   # If the IP matches, set the color to green
   echo "{\"text\": \"OFFLINE\", \"class\": \"ip-noip\", \"tooltip\":\"No internet\"}"
 else
   # If the IP does not match, set the color to red
-  echo "{\"text\": \"$ip 󰿆\", \"class\": \"ip-mismatch\", \"tooltip\":\"not secure!\"}"
+  echo "{\"text\": \"󰿆 $ip\", \"class\": \"ip-mismatch\", \"tooltip\":\"not secure!\"}"
 fi

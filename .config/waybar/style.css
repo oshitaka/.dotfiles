@@ -66,7 +66,7 @@ button {
 }
 
 #custom-weather{
-    padding: 5px 6px 0px 6px;
+    padding: 2px 6px 0px 6px;
     color: @module;
 }
 
@@ -81,6 +81,8 @@ button {
 #network,
 #pulseaudio,
 #wireplumber,
+#custom-mic,
+#custom-webcam,
 #power-profiles-daemon{
     padding: 0px 7px 0px 6px;
     color: @module;
@@ -107,22 +109,23 @@ button {
     color: @module;
 }
 
-#network#speed{
+/* .speed{
   padding: 0px 1px 0px 3px;
-  margin: 0px 1px 0px 3px;
+  margin: 0px 0px 0px 0px;
   color: @module;
-}
+  background-color: alpha(@black, 0.85);
+} */
 
-#custom-cmus{
+/* #custom-cmus{
     padding: 0px 4px 0px 3px;
     margin: 0px 3px 0px 3px;
     color: @module;
-}
+} */
 
-#custom-ip{
+/* #custom-ip{
     padding: 0px 4px 0px 3px;
     margin: 0px 3px 0px 3px;
-}
+} */
 
 #battery,
 #cpu,
@@ -181,8 +184,8 @@ label:focus {
 #custom-vpn {
   padding: 0px 7px 0px 5px;
   /* padding: 0px 6px 0px 3px; */
-  margin: 0px 3px 0px 1px;
-  /* background-color: @black; */
+  margin: 1px -9px 1px 1px;
+  background-color: alpha(@black, 0.85);
 
 }
 
@@ -200,11 +203,11 @@ label:focus {
   color: @module; /* Color when IP does not match */
 }
 
-#custom-cava {
+/* #custom-cava {
   padding: 0px 4px 0px 3px;
   margin: 0px 3px 0px 3px;
   color: @accent;
-}
+} */
 
 #temperature.critical {
     background-color: @urgent;
@@ -216,12 +219,12 @@ label:focus {
     color: @urgent;
 }
 
-#custom-media {
+/* #custom-media {
     color: @module;
     min-width: 100px;
     padding: 0px 6px 0px 6px;
     margin: 0px 3px 0px 3px;
-}
+} */
 
 #tray > .passive {
     -gtk-icon-effect: dim;
@@ -232,10 +235,10 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-#custom-quote {
+/* #custom-quote {
 	color: @accent;
 	min-width: 100px;
   padding: 0px 6px 0px 6px;
   margin: 0px 3px 0px 3px;
-}
+} */
 
