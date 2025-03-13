@@ -15,9 +15,12 @@ height=200
 max-icon-size=96
 margin=20,20,0
 padding=15,15,15
+outer-margin=2,2
 border-size=5
-default-timeout=10000
+default-timeout=1000
 group-by=summary
+history=1
+icons=1
 format=<span font="JetBrainsMono Nerd Font weight=325 Italic" underline=single size="12288">%s</span>\n<span font="JetBrainsMono Nerd Font weight=325" size="12288">%b</span>
 
 [grouped]

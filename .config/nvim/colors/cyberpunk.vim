@@ -26,7 +26,7 @@
 " |--------------+---------|
 " | Blue         | #14ffff |
 " |--------------+---------|
-" | Magenta      | #f902e7 |
+" | Magenta      | #ff3bf1 |
 " |--------------+---------|
 " | Cyan         | #A700FF |
 " |--------------+---------|
@@ -99,7 +99,7 @@ let s:dark_yellow = { "gui": "#E7C630", "cterm": "214", "cterm16": "11" }
 
 let s:blue = { "gui": "#14ffff", "cterm": "75", "cterm16": "4" } " Alternate cterm: 75
 
-let s:purple = { "gui": "#A700FF", "cterm": "135", "cterm16": "5" } " Alternate cterm: 176
+let s:purple = { "gui": "#ff3bf1", "cterm": "135", "cterm16": "5" } " Alternate cterm: 176
 
 let s:cyan = { "gui": "#00FFB3", "cterm": "86", "cterm16": "6" } " Alternate cterm: 73
 

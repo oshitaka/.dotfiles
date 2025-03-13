@@ -102,7 +102,7 @@ if [ "$TERM" = "screen-256color" ]; then
     echo -en "\e]PBFFFC4C" #yellow
     echo -en "\e]P414ffff" #darkblue
     echo -en "\e]PCF57800" #blue
-    echo -en "\e]P5f902e7" #darkmagenta
+    echo -en "\e]P5ff3bf1" #darkmagenta 
     echo -en "\e]PD9c004b" #magenta
     echo -en "\e]P600FFB3" #darkcyan
     echo -en "\e]PE00FFB3" #cyan

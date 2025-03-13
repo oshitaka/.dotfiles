@@ -2,13 +2,14 @@
 # Default acpi script that takes an entry for all actions
 # paste this file to /etc/acpi
 
-TARGET_UID=$(id | grep -Po 'uid=\K\d+')
+TARGET_UID=$(id $(users | awk '{print $1}') | grep -Po 'uid=\K\d+')
+
 my_pactl() {
-    setpriv --reuid $TARGET_UID sh -c "XDG_RUNTIME_DIR=/run/user/$TARGET_UID pactl $*"
+    setpriv --reuid '$TARGET_UID' sh -c "XDG_RUNTIME_DIR=/run/user/'$TARGET_UID' pactl $*"
 }
 
 my_playerctl() {
-    setpriv --reuid $TARGET_UID sh -c "XDG_RUNTIME_DIR=/run/user/$TARGET_UID playerctl $*"
+    setpriv --reuid '$TARGET_UID' sh -c "XDG_RUNTIME_DIR=/run/user/'$TARGET_UID' playerctl $*"
 }
 
 case "$1" in
