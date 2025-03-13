@@ -2,7 +2,7 @@
 # Default acpi script that takes an entry for all actions
 # paste this file to /etc/acpi
 
-TARGET_UID=1000
+TARGET_UID=$(id | grep -Po 'uid=\K\d+')
 my_pactl() {
     setpriv --reuid $TARGET_UID sh -c "XDG_RUNTIME_DIR=/run/user/$TARGET_UID pactl $*"
 }

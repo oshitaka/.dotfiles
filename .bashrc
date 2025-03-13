@@ -40,19 +40,20 @@ PROMPT_COMMAND='history -a'
 # display additional info
 function git_branch() {
   local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-  local color_branch="\033[0;35m"
+  local color_branch="\033[0;32m"
   local color_on="\033[0;33m"
   local color_reset="\033[0m"
   if [ -n "$branch" ]; then
-    echo -e "${color_on}on${color_reset} ${color_branch}${branch}${color_reset} "
+    echo -e " ${color_on}on${color_reset} ${color_branch} ${branch}${color_reset}"
   fi
 }
 
 function venv() {
-  local color="\033[0;35m"
+  local color="\033[0;32m"
+  local color_via="\033[0;33m"
   local color_reset="\033[0m"
   if [[ -n "$VIRTUAL_ENV" ]]; then
-    echo -e " ${color}$(basename $VIRTUAL_ENV)${color_reset}";
+    echo -e " ${color_via}via${color_reset} ${color} $(basename $VIRTUAL_ENV)${color_reset}";
   fi
 }
 
@@ -87,7 +88,7 @@ function active_vpn() {
 #PS1='\n\u@\h in \w :: \t \n>_ '
 
 # cyberpunk theme 
-PS1='\n\[\e[00;35m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;35m\]\w\[\e[m\] $(git_branch)\[\e[00;33m\]>>\[\e[m\] [$(battery)$(active_vpn)$(venv)] \[\e[00;33m\]>>\[\e[m\] \[\e[00;33m\]\[\D{%a, %d %b} \t\[\e[m\]\n\[\e[00;33m\]>\[\e[m\] '
+PS1='\n\[\e[00;35m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;35m\]\w\[\e[m\]$(git_branch)$(venv) \[\e[00;33m\]..::\[\e[m\]\[\e[00;33m\]\D{%a, %d %b} \t::..\[\e[m\] [$(battery)$(active_vpn)]\n\[\e[00;33m\]>\[\e[m\] '
 
 # cyberpunk colors for tty
 if [ "$TERM" = "screen-256color" ]; then
