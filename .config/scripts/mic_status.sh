@@ -21,8 +21,8 @@ mute_value=$(echo "$mute_state" | awk '{print $2}')
 # Choose icon: You can replace these with your preferred icons, for example from Font Awesome.
 if [ "$mute_value" = "yes" ]; then
     # Microphone muted
-    echo ""  # Example icon for muted microphone
+    echo "{\"text\": \"\", \"class\": \"mic-off\", \"tooltip\":\"OFF\"}"  # Example icon for muted microphone  
 else
     # Microphone active
-    echo ""  # Example icon for active microphone
+    echo "{\"text\": \"\", \"class\": \"mic-on\", \"tooltip\":\"ON\"}"  # Example icon for active microphone 
 fi

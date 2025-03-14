@@ -88,7 +88,7 @@ function active_vpn() {
 #PS1='\n\u@\h in \w :: \t \n>_ '
 
 # cyberpunk theme 
-PS1='\n\[\e[00;35m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;35m\]\w\[\e[m\]$(git_branch)$(venv) \[\e[00;33m\]..::\[\e[m\]\[\e[00;33m\]\D{%a, %d %b} \t::..\[\e[m\] [$(battery)$(active_vpn)]\n\[\e[00;33m\]>\[\e[m\] '
+PS1='\n\[\e[00;34m\]\u@\h\[\e[m\] \[\e[00;33m\]in\[\e[m\] \[\e[00;34m\]\w\[\e[m\]$(git_branch)$(venv) \[\e[00;33m\]..::\[\e[m\]\[\e[00;33m\]\D{%a, %d %b} \t::..\[\e[m\] [$(battery)$(active_vpn)]\n\[\e[00;33m\]>\[\e[m\] '
 
 # cyberpunk colors for tty
 if [ "$TERM" = "screen-256color" ]; then
@@ -97,18 +97,18 @@ if [ "$TERM" = "screen-256color" ]; then
     echo -en "\e]P1F02C35" #darkred
     echo -en "\e]P9FF0000" #red
     echo -en "\e]P200FF00" #darkgreen
-    echo -en "\e]PAf902e7" #green
+    echo -en "\e]PA00FF00" #green
     echo -en "\e]P3E7C630" #darkyellow
     echo -en "\e]PBFFFC4C" #yellow
-    echo -en "\e]P414ffff" #darkblue
-    echo -en "\e]PCF57800" #blue
-    echo -en "\e]P5ff3bf1" #darkmagenta 
-    echo -en "\e]PD9c004b" #magenta
+    echo -en "\e]P4ff3bf1" #darkblue
+    echo -en "\e]PCFFFC4C" #blue
+    echo -en "\e]P514ffff" #darkmagenta 
+    echo -en "\e]PDff3bf1" #magenta
     echo -en "\e]P600FFB3" #darkcyan
     echo -en "\e]PE00FFB3" #cyan
     echo -en "\e]P7BDC3C7" #lightgrey
     echo -en "\e]PFC1DEFF" #white
-    setterm -term linux -foreground cyan -store
+    setterm -term linux -foreground magenta -store
     clear #for background artifacting
 fi
 

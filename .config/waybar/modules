@@ -24,10 +24,22 @@
         }
     },
 
-    "custom/separator": {
-        "format": "",
+    "custom/separator_left": {
+        "format": "..::",
         "interval": "once",
         "tooltip": false
+    },
+
+    "custom/separator_right": {
+      "format": "::..",
+      "interval": "once",
+      "tooltip": false
+    },
+    
+    "custom/separator_center": {
+      "format": "::",
+      "interval": "once",
+      "tooltip": false
     },
 
     "group/indicators": {
@@ -258,7 +270,8 @@
       "on-click": "exec /home/oshitaka/.config/scripts/mic_toggle.sh",
       "interval": 1,
       "tooltip": false,
-      // "return-type": "json",
+      "return-type": "json",
+      "class": "mute",
       "format": "{}"
   },
 
