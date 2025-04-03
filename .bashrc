@@ -17,6 +17,7 @@ alias ip='ip -color=auto'
 
 export TERM=screen-256color
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # fzf config
 eval "$(fzf --bash)"
@@ -142,3 +143,7 @@ alias panel="kitty +kitten panel --edge=background"
 alias dotfiles="git --work-tree=$HOME --git-dir=$HOME/.dotfiles/"
 alias savebat="echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
 alias normalbat="echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
+alias t="tmux new -s main"
+
+#RUST PATH
+#. "$HOME/.cargo/env"
