@@ -70,13 +70,13 @@
     //indicators
     "cpu": {
         "interval": 1,
-        "format": " {usage}%"
+        "format": "c:{usage}%"
     },
 
     "disk": {
         "interval": 30,
         "path": "/",
-        "format": " {percentage_used}%",
+        "format": "d:{percentage_used}%",
         "tooltip": true,
         "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)"
     },
@@ -90,16 +90,16 @@
             //"/sys/class/thermal/thermal_zone2/temp"
         ],
         "critical-threshold": 85,
-        "format-critical": "{icon}{temperatureC}°C",
+        "format-critical": "{icon}w{temperatureC}°C",
         "format": "{icon}{temperatureC}°C",
-        "format-icons": [" ", " ", " "],
+        "format-icons": ["t:", "t:", "t:"],
         "on-click-right": "kitty --title btop sh -c 'btop'"
     },
 
     "memory": {
         "interval": 10,
-        "format-alt": "󰍜 {used:0.1f}G",
-        "format": "󰍜 {percentage}%",
+        "format-alt": "m:{used:0.1f}G",
+        "format": "m:{percentage}%",
         "format-alt-click": "click",
         "tooltip": true,
         "tooltip-format": "{used:0.1f}GB/{total:0.1f}G",

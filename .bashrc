@@ -144,6 +144,7 @@ alias dotfiles="git --work-tree=$HOME --git-dir=$HOME/.dotfiles/"
 alias savebat="echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
 alias normalbat="echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
 alias t="tmux new -s main"
+alias tkill="tmux kill-server"
 
 #RUST PATH
 #. "$HOME/.cargo/env"
