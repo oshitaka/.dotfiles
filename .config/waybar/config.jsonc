@@ -25,7 +25,7 @@
       "group/main", 
       "hyprland/language",
 		  "clock",
-      "idle_inhibitor",
+      // "idle_inhibitor",
       "custom/separator_center"
 		]
   }

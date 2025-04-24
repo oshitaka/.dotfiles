@@ -257,13 +257,13 @@
     //   "on-scroll-down": "playerctl previous"
     // },
 
-    "idle_inhibitor": {
-      "format": "{icon}",
-      "format-icons": {
-        "activated": "",
-        "deactivated": ""
-      }
-    },
+    // "idle_inhibitor": {
+    //   "format": "{icon}",
+    //   "format-icons": {
+    //     "activated": "",
+    //     "deactivated": ""
+    //   }
+    // },
 
     "custom/mic": {
       "exec": "~/.config/scripts/mic_status.sh",
