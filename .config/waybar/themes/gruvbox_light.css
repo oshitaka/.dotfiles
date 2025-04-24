@@ -6,6 +6,8 @@
 @define-color accent   		    #b16286; 
 @define-color urgent          #cc241d;
 @define-color granted         #98971a; 
+@define-color underline       #458588;
+@define-color box             #fbf1c7;
 
 @define-color gray            #928374; 
 @define-color red             #cc241d; 

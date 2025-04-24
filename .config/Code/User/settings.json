@@ -138,7 +138,7 @@
   "editor.cursorStyle": "line",
   "github.copilot.editor.enableAutoCompletions": true,
   "catppuccin.accentColor": "peach",
-  "workbench.colorTheme": "Blueberry Banana",
+  "workbench.colorTheme": "Gruvbox Light Medium",
   "code-runner.runInTerminal": true,
   "code-runner.executorMap": {
 

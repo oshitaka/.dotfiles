@@ -1,11 +1,11 @@
 # Colors
-background-color=#141d2b
-text-color=#00ff00
-border-color=#14ffff
+background-color=#d5c4a1
+text-color=#3c3836
+border-color=#d65d0e
 progress-color=over #928374
 
 [urgency=high]
-border-color=#F02C35
+border-color=#cc241d
 
 layer=top
 markup=1
