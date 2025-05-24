@@ -206,5 +206,6 @@
   "chat.agent.enabled": true,
   "microsoft-sovereign-cloud.customEnvironment": {
   
-  }
+  },
+  "python.analysis.typeCheckingMode": "standard"
 }
