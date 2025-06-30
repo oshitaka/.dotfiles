@@ -207,5 +207,6 @@
   "microsoft-sovereign-cloud.customEnvironment": {
   
   },
-  "python.analysis.typeCheckingMode": "standard"
+  "python.analysis.typeCheckingMode": "standard",
+  "github.copilot.nextEditSuggestions.enabled": true
 }
