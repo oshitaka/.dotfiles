@@ -149,7 +149,8 @@ alias savebat="echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conser
 alias normalbat="echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
 alias t="tmux new -s main"
 alias tkill="tmux kill-server"
-
+alias homelab="ssh oshi@10.10.10.4"
+alias webserver="ssh oshi@10.10.10.5 -i /home/oshitaka/.ssh/cloudru_ed25519_key"
 #RUST PATH
 #. "$HOME/.cargo/env"
 

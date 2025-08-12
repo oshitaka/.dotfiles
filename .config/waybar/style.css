@@ -1,8 +1,9 @@
 
 /* @import '../../.config/waybar/themes/htb.css'; */
 /* @import '../../.config/waybar/themes/cyberpunk_dark.css'; */
-@import '../../.config/waybar/themes/cyberpunk_light.css';
+/* @import '../../.config/waybar/themes/cyberpunk_light.css'; */
 /* @import '../../.config/waybar/themes/gruvbox_light.css'; */
+@import '../../.config/waybar/themes/gruvbox_dark.css';
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */

@@ -1,11 +1,13 @@
 @define-color bg              #1d2021; 
 @define-color button          #665c54; 
 @define-color button_active   #a89984;
-@define-color button_empty    #a89984;
+@define-color button_empty    #665c54;
 @define-color module          #7c6f64; 
 @define-color accent   		    #d65d0e;
 @define-color urgent          #cc241d;
 @define-color granted         #98971a; 
+@define-color box             #1d2021;
+@define-color underline       #458588;
 
 @define-color gray            #928374; 
 @define-color red             #cc241d; 
