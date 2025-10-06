@@ -123,7 +123,7 @@ alias upd="sudo pacman -Syu && paru -Syu"
 alias yy="yazi"
 alias usb="usbguard list-devices | grep 'block'"
 alias mnt="sudo mount /dev/sda1 /mnt/disk"
-alias umnt="sudo umount /mnt/disk"
+alias umnt="sudo -l umount /mnt/disk"
 alias vi="nvim"
 alias tnl="ssh -p 321 -C2 -D 1080 oshi@147.45.174.116"
 alias tru="ssh -C2 -D 1081 -i /home/oshitaka/.ssh/cloudru_ed25519_key oshi@82.202.136.33"
@@ -150,6 +150,7 @@ alias normalbat="echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/cons
 alias t="tmux new -s main"
 alias tkill="tmux kill-server"
 alias homelab="ssh oshi@10.10.10.4"
+alias backup="rsync -Pr /home/oshitaka /mnt/disk/bin/backups"
 #RUST PATH
 #. "$HOME/.cargo/env"
 
